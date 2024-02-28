@@ -1,0 +1,38 @@
+*******************************************************************************
+
+first login to github 
+
+create new repository
+
+github repository path/url = https://github.com/Saurabh3182/pumo.git
+
+****************************************************************************
+
+go to project repository/folder  
+and open bit.batch here
+
+****************************************************************************
+
+enter commands 
+execute commands
+1)git init (create hidden folder in project)
+(by using this command create an local repository)
+
+then we need to connect our local repository to remote repository 
+for that 
+2)git remote add origin (and enter github repository url(https://github.com/Saurabh3182/pumo.git))
+
+3) git status 
+it show status of our local repository(untrack file/or in working folder)
+after adding on stagging(track file)
+
+4)git add-A (add in stagging area )
+
+before executing first commit msg
+5)git config --global user.name "Saurabh3182"
+6)git config --global user.email "saurabhbansode3182@gmail.com"
+(both are one time commands)
+
+7)git commit -m "commit msg"
+(help to understand commit reason)
+
