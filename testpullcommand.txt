@@ -1,3 +1,10 @@
 1)Pumo project added successfully in github
 2)Successfully push our pumo project in github remote repository
 3)(now try to execute pull comamnd)
+**********************************************************************
+
+pull command executed and we got the file in our local repository
+
+now we try again push command with doing some changes in our testpull file.
+
+****************************************************************************
