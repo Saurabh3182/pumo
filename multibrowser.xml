@@ -7,18 +7,12 @@
 			class-name="com.pumo.utilityclass.ExtentListenerClass"></listener>
 	</listeners>
 	
-  <test name="Test1">
-    <parameter name="browserName" value="chrome"/>
-    <classes>
-      <class name="com.pumo.testclass.login_page_Test"/>
-    </classes>
-  </test> <!-- Test -->
-  
-  <test name="Test2">
-    <parameter name="browserName" value="edge"/>
-    <classes>
-      <class name="com.pumo.testclass.HomepageTest"/>
-    </classes>
-  </test> <!-- Test -->
+ 
+<test name="AllTest1">
+<parameter name="browserName" value="chrome"/>
+<classes> 
+	  <class name="com.pumo.testclass.Search_Products_Test1"/>
+</classes>
+</test> <!-- Test -->  
   
 </suite> <!-- Suite -->

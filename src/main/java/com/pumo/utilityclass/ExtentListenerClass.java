@@ -15,7 +15,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 
@@ -30,7 +29,7 @@ public class ExtentListenerClass implements ITestListener{
 		String timestamp = new SimpleDateFormat("dd.mm.yyyy.hh.mm.ss").format(new Date());
 	//	String reportName = "Pumo" + timestamp + ".html";
 	//	htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/Reports/" + reportName);
-		htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/ExtendReport/Pumo-Test "+timestamp+".html");
+		htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/ExtendReport/PumoBeauty-Test "+timestamp+".html");
 
 		reports = new ExtentReports();
 		reports.attachReporter(htmlReporter);
@@ -49,17 +48,19 @@ public class ExtentListenerClass implements ITestListener{
 
 	}
 
-	//OnStart method is called when any Test starts.
+	//OnStart method is called when any Test starts
+    @Override
 	public void onStart(ITestContext Result)					
 	{		
 		configureReport();
-		System.out.println("On Start method invoked....");  		
+		System.out.println("Test case start....");  		
 	}	
 
 	//onFinish method is called after all Tests are executed
+    @Override
 	public void onFinish(ITestContext Result) 					
 	{		
-		System.out.println("On Finished method invoked....");  	
+		System.out.println("Test case close....");  	
 		reports.flush();//it is mandatory to call flush method to ensure information is written to the started reporter.
 
 	}		
@@ -68,13 +69,16 @@ public class ExtentListenerClass implements ITestListener{
 
 	// When Test case get failed, this method is called.		
 
-	public void onTestFailure(ITestResult Result) 					
+/*	public void onTestFailure(ITestResult Result) 					
 	{		
 		System.out.println("Name of test method failed:" + Result.getName() );  		
 		test = reports.createTest(Result.getName());//create entry in html report
 		test.log(Status.FAIL, MarkupHelper.createLabel("Name of the failed test case is: " + Result.getName() ,ExtentColor.RED));
 
-	String screenShotPath = System.getProperty("user.dir") + "\\ScreenShots\\" + Result.getName() + ".png";
+		String screenShotPath = System.getProperty( "D:\\TEstingSetUP\\EclipseWorkPlace\\final_pumo\\ScreenShots\\." + Result.getName() + ".png");
+
+		
+//	String screenShotPath = System.getProperty("user.dir") + "\\ScreenShot\\" + Result.getName() + ".png";
 
 	File screenShotFile = new File(screenShotPath);
 
@@ -92,9 +96,11 @@ public class ExtentListenerClass implements ITestListener{
 	//	test.addScreenCaptureFromPath(null)
 
 	}		
-
+*/
+    
+    
 	// When Test case get Skipped, this method is called.		
-
+    @Override
 	public void onTestSkipped(ITestResult Result)					
 	{		
 		System.out.println("Name of test method skipped:" + Result.getName() );  		
@@ -104,7 +110,7 @@ public class ExtentListenerClass implements ITestListener{
 	}			
 
 	// When Test case get Started, this method is called.		
-
+    @Override
 	public void onTestStart(ITestResult Result)					
 	{		
 		System.out.println("Name of test method started:" + Result.getName() );  		
@@ -112,7 +118,7 @@ public class ExtentListenerClass implements ITestListener{
 	}		
 
 	// When Test case get passed, this method is called.		
-
+    @Override
 	public void onTestSuccess(ITestResult Result)					
 	{		
 		System.out.println("Name of test method sucessfully executed:" + Result.getName() );  		

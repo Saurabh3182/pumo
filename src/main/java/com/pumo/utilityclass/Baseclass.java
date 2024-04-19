@@ -25,7 +25,7 @@ public class Baseclass
     public ExtentHtmlReporter htmlReporter;
 
 
-    @Parameters("browserName")
+     @Parameters("browserName")
     @BeforeClass
 	public void initialize(@Optional String browserName) throws InterruptedException, IOException
 	{
@@ -36,7 +36,7 @@ public class Baseclass
 		{
 			
 		System.setProperty("webdriver.chrome.driver",
-	        "D:\\TEstingSetUP\\Chrome\\chromedriver-win64\\chromedriver.exe");
+	        "D:\\TEstingSetUP\\Chrome1\\chromedriver-win64\\chromedriver.exe");
         
 	    driver = new ChromeDriver();
 	    

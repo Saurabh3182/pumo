@@ -14,17 +14,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ProductPage extends com.pumo.utilityclass.Baseclass
 {
 	
-	@FindBy(xpath=("/html/body/app-root/app-product/div[1]/div/div[2]/h4")) private WebElement InStock ;
+	@FindBy(xpath=("//h4[text()=' In Stock ']")) private WebElement InStock ;
 
 	@FindBy(xpath=("//select[@class='form-select form-select-sm']")) private WebElement Gram ;
 
-	@FindBy(xpath=("/html/body/app-root/app-product/div[1]/div/div[2]/h1")) private WebElement ProductName ;
+	//@FindBy(xpath=("")) private WebElement ProductName ;
 	
 	@FindBy(xpath=("/html/body/app-root/app-product/div[1]/div/div[3]/div/div/select/option[2]")) private WebElement gr_no ;
 	
 	@FindBy(xpath="//button[@class='cart ng-star-inserted']") private WebElement AddCart ;
 
-	@FindBy(xpath="(//a[@class='nav-link'])[1]") private WebElement GotoCart ;
+	@FindBy(xpath="//span[@class='cart ps-2']") private WebElement GotoCart ;
 	
 
 
@@ -33,15 +33,16 @@ public class ProductPage extends com.pumo.utilityclass.Baseclass
 		PageFactory.initElements(driver,this);
 	}
 	
-	public String verifyproductname()
-	{
-		String Pname=ProductName.getText();
-		return Pname;
-	}
+//	public String verifyproductname()
+//	{
+//		String Pname=ProductName.getText();
+//		return Pname;
+//	}
 	
-	public String verifyproductInStock()
+	public String verifyproductInStock() throws InterruptedException
 	{
 		String Stock=InStock.getText();
+		Thread.sleep(3000);
 		return Stock;
 	}
 	
@@ -49,10 +50,10 @@ public class ProductPage extends com.pumo.utilityclass.Baseclass
 	{
 		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 //		wait.until(ExpectedConditions.visibilityOfElementLocated((By) Gram));
-		
+		Thread.sleep(4000);
 		Select sel = new Select(Gram);
 		sel.selectByVisibleText(gr);
-		Thread.sleep(4000);
+	
 			
 	}
 	
@@ -70,11 +71,11 @@ public class ProductPage extends com.pumo.utilityclass.Baseclass
 		boolean result = AddCart.isDisplayed();
 		if(result)
 		{
-			System.out.println("The Search_btn is Present/Displayed");
+			System.out.println("Product added into cart successfully");
 		}
 		else
 		{
-			System.out.println("The element is not Present/Displayed");
+			System.out.println("Product not added into cart");
 		}
 		return result;
 		

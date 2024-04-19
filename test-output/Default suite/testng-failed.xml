@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pumo.testclass.HomepageTest">
+      <class name="com.pumo.testclass.FirstPage_Products_Test">
         <methods>
           <include name="initialize"/>
-          <include name="CloseBrowser"/>
           <include name="logout"/>
+          <include name="CloseBrowser"/>
           <include name="login"/>
-          <include name="Verify_Search_btn"/>
+          <include name="Demo"/>
+          <include name="Eyebrow_pencil"/>
         </methods>
-      </class> <!-- com.pumo.testclass.HomepageTest -->
+      </class> <!-- com.pumo.testclass.FirstPage_Products_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

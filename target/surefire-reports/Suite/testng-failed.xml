@@ -4,37 +4,19 @@
   <listeners>
     <listener class-name="com.pumo.utilityclass.ExtentListenerClass"/>
   </listeners>
-  <test thread-count="5" name="Test1(failed)" verbose="0">
+  <test thread-count="5" name="AllTest1(failed)" verbose="0">
     <parameter name="browserName" value="chrome"/>
     <classes>
-      <class name="com.pumo.testclass.login_page_Test">
+      <class name="com.pumo.testclass.Search_Products_Test1">
         <methods>
+          <include name="lakyou_beauty_25"/>
           <include name="initialize"/>
-          <include name="login"/>
           <include name="logout"/>
-          <include name="Verify_Title"/>
+          <include name="Login"/>
           <include name="CloseBrowser"/>
-          <include name="Login_Page_Logo"/>
+          <include name="INSHINE_Lipstick"/>
         </methods>
-      </class> <!-- com.pumo.testclass.login_page_Test -->
+      </class> <!-- com.pumo.testclass.Search_Products_Test1 -->
     </classes>
-  </test> <!-- Test1(failed) -->
-  <test thread-count="5" name="Test2(failed)" verbose="0">
-    <parameter name="browserName" value="edge"/>
-    <classes>
-      <class name="com.pumo.testclass.HomepageTest">
-        <methods>
-          <include name="initialize"/>
-          <include name="VerifyEmailid"/>
-          <include name="CloseBrowser"/>
-          <include name="Verifylogo"/>
-          <include name="login"/>
-          <include name="logout"/>
-          <include name="Verify_Wishlist"/>
-          <include name="Verify_Search_btn"/>
-          <include name="verifyMobileno"/>
-        </methods>
-      </class> <!-- com.pumo.testclass.HomepageTest -->
-    </classes>
-  </test> <!-- Test2(failed) -->
+  </test> <!-- AllTest1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

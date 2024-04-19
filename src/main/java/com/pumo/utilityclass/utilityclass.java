@@ -8,32 +8,23 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
-public class utilityclass 
+public class utilityclass extends Baseclass
 {
-	Properties properties;
 	
-	String path="D:\\TEstingSetUP\\EclipseWorkPlace\\\\pumo\\Property.properties";
-	
-	public utilityclass()
+	public utilityclass(WebDriver driver)
 	{
-		properties= new Properties();
-		try
-		{
-	      FileInputStream file=new FileInputStream("path");
-          properties.load(file);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
-	
+        this.driver = driver;
+    }
 	
 	@Test
 	public static String getdatafromPF(String Keys) throws IOException
@@ -72,7 +63,7 @@ public class utilityclass
 		System.out.println(source);
 		
 		//File destination=new File("C:\\Users\\Saurabh\\02Nov22-eclipse-workspace\\Final_script\\ScreenShots\\."+Testid+".jpg");		
-		File destination=new File("D:\\TEstingSetUP\\Screenshot\\."+Testid+".jpg");
+		File destination=new File("D:\\TEstingSetUP\\EclipseWorkPlace\\final_pumo\\ScreenShots\\."+Testid+".jpg");
 	
 		
 		FileHandler.copy(source, destination);
@@ -100,22 +91,30 @@ public class utilityclass
 		return destination;
 	}
 	
-	public String readConf() throws IOException 
-	{                                             
-		
-		
-		String values=properties.getProperty("browser");
-//		
-		if(values!=null)
-		return values;
-		else
-			throw new RuntimeException("browser not found");
-		
-	}
 	
 	
-	
-	
-	
+	   public void Actionclass(WebElement ele) throws InterruptedException
+	   {
+		   
+		   Actions act = new Actions(driver);
+	         act.doubleClick(ele).perform();
+			
+	 		Thread.sleep(2000);
+	   }
+	    
+       public void scroll(WebElement ele)
+       {
+    	
+    	   ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",ele);    
+    	   	      
+           ((JavascriptExecutor)driver).executeScript("arguments[0].click();", ele);
+    	   
+    	    
+       }
+	   
+	   
+	   
+     
+       
 
 }

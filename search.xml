@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test name="Test">
+	  <parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="com.pumo.testclass.fifthpage_product_Test"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

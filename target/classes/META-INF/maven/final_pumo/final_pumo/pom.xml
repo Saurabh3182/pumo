@@ -22,7 +22,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.10.1</version>
+					<version>3.13.0</version>
 					<configuration>
 						<!-- put your configurations here -->
 					</configuration>
@@ -31,7 +31,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M6</version>
+					<version>3.2.5</version>
 					<configuration>
 						<suiteXmlFiles>
 							<suiteXmlFile>multibrowser.xml</suiteXmlFile>
@@ -69,7 +69,7 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.16.1</version>
+    <version>4.18.1</version>
 </dependency>
     
     <dependency>
@@ -77,19 +77,24 @@
     <artifactId>slf4j-api</artifactId>
     <version>1.7.32</version> <!-- Adjust version number as needed -->
 </dependency>
+	
+
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+</dependency>
+
 
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
-    <version>4.0.9</version>
+    <version>4.1.5</version>
 </dependency>
+ <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 
-    <dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.4.0</version>
-			<scope>test</scope>
-		</dependency>
+
     
     
   </dependencies>

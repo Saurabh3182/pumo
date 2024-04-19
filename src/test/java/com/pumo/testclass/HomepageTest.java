@@ -5,17 +5,14 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-import com.pumo.pomclass.AllProduct;
+import com.pumo.pomclass.FirstPageProduct;
 import com.pumo.pomclass.IndexPage;
 import com.pumo.pomclass.LoginPage;
+import com.pumo.pomclass.Logout;
 import com.pumo.utilityclass.Baseclass;
 import com.pumo.utilityclass.utilityclass;
 
@@ -26,7 +23,8 @@ public class HomepageTest extends Baseclass
 	IndexPage In ;
     int Testid; 
 	LoginPage LP;
-	AllProduct Ap;
+	Logout LG;
+	FirstPageProduct Pone;
 
     
 
@@ -40,7 +38,7 @@ public class HomepageTest extends Baseclass
 
 		In = new IndexPage(driver);
 		LP = new LoginPage(driver);
-		Ap = new AllProduct(driver);
+		Pone = new FirstPageProduct(driver);	
 		
       In.Close_PopUp();
       In.Click_On_LoginBtn();
@@ -113,9 +111,9 @@ public class HomepageTest extends Baseclass
 		}
 		
 		Thread.sleep(5000);
-		Ap.Homebtn();
-        Ap.drop_down();
-        Ap.logout();
+		LG.Homebtn();
+        LG.drop_down();
+        LG.logout();
 		System.out.println("***********************Home-Page Test Finish******************************************");
 
 	}
